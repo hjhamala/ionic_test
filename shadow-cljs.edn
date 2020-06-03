@@ -1,0 +1,10 @@
+{:lein         true
+ :source-paths ["src"]
+ :nrepl        {:port 58784}
+ :builds       {:app {:target     :browser
+                      :output-dir "resources/public/js"
+                      :asset-path "/js"
+                      :modules    {:app {:entries [ionic-reagent.core]}}
+                      :devtools   {:after-load ionic-reagent.core/mount-root}}}
+ :dev-http     {3000 {:root    "resources/public"
+                      :handler ionic-reagent.handler/app}}}
